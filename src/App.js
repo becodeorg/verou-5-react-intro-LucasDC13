@@ -1,6 +1,6 @@
 import Header from "./components/Header.js";
-import Todoform from "./components/Todoform.js";
-import Todolist from "./components/Todolist.js";
+import TodoForm from "./components/TodoForm.js";
+import TodoList from "./components/TodoList.js";
 import './App.css';
 
 function App() {
@@ -8,9 +8,9 @@ function App() {
     <div className="">
       < Header />
       <main>
-        < Todoform />
+        < TodoForm />
         <hr></hr>
-        < Todolist />
+        < TodoList />
       </main>
     </div>
     

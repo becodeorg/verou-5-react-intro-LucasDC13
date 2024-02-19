@@ -1,27 +1,26 @@
-import React from "react";
+import React, { useState } from "react";
 
 export default function Todolist() {
-    return ( 
-        <div className="Todo-list">
-          <h2>Todos</h2>
-          <ul>
-            <li>
-              <input type="checkbox" id="post-1" name="post-1"></input>
-              <label for="post-1">First todo</label>
-            </li>
-            <li>
-              <input type="checkbox" id="post-2" name="post-2"></input>
-              <label for="post-2">Second todo</label>
-            </li>
-            <li>
-              <input type="checkbox" id="post-3" name="post-3"></input>
-              <label for="post-3">Third todo</label>
-            </li>
-            <li>
-              <input type="checkbox" id="post-4" name="post-4"></input>
-              <label for="post-4">Fourth todo</label>
-            </li>
-          </ul>
-        </div>
-    );
+  
+  const initialTodos = [
+    ["My first todo", 1], 
+    ["My second todo", 0], 
+    ["My third todo", 1], 
+    ["My fourth todo", 0]
+  ];
+
+  const [todos, setTodos] = useState(initialTodos);
+
+  return ( 
+    <div className="Todo-list">
+      <h2>Todos</h2>
+      <ul>
+        {todos.map((todo) => (
+          <li>
+            <input type="checkbox" checked={todo[1] === 1} /> {todo[0]}
+          </li>
+        ))}
+      </ul>
+    </div>
+  );
  };
