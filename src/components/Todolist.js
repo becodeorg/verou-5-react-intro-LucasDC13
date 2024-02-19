@@ -3,8 +3,8 @@ import React from "react";
 export default function Todolist() {
     return ( 
         <div className="Todo-list">
+          <h2>Todos</h2>
           <ul>
-            Todos
             <li>
               <input type="checkbox" id="post-1" name="post-1"></input>
               <label for="post-1">First todo</label>
