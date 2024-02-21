@@ -13,14 +13,16 @@ const Todolist = () => {
 
   return ( 
     <>
-      <h2>Todos</h2>
-      <ul>
-        {todos.map((todo) => (
-          <li>
-            <input type="checkbox" checked={todo[1] === 1} /> {todo[0]}
-          </li>
-        ))}
-      </ul>
+      <div className="Todo-list">
+        <h2>Todos</h2>
+        <ul>
+          {todos.map((todo) => (
+            <li>
+              <input type="checkbox" checked={todo[1] === 1} /> {todo[0]}
+            </li>
+          ))}
+        </ul>
+      </div>
     </>
   );
  };
