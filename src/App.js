@@ -3,16 +3,22 @@ import TodoForm from "./components/TodoForm.js";
 import TodoList from "./components/TodoList.js";
 import './App.css';
 
-function App() {
+const App = () => {
   return (
-    <div className="">
-      < Header />
+    <>
+      <header className="App-header">
+        < Header />
+      </header>
       <main>
-        < TodoForm />
+        <div className="Todo-form">
+          < TodoForm />
+        </div>
         <hr></hr>
-        < TodoList />
+        <div className="Todo-list">
+          < TodoList />
+        </div>
       </main>
-    </div>
+    </>
     
   );
 }

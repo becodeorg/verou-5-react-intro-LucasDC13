@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-export default function Todolist() {
+const Todolist = () => {
   
   const initialTodos = [
     ["My first todo", 1], 
@@ -12,7 +12,7 @@ export default function Todolist() {
   const [todos, setTodos] = useState(initialTodos);
 
   return ( 
-    <div className="Todo-list">
+    <>
       <h2>Todos</h2>
       <ul>
         {todos.map((todo) => (
@@ -21,6 +21,8 @@ export default function Todolist() {
           </li>
         ))}
       </ul>
-    </div>
+    </>
   );
  };
+
+ export default Todolist;
