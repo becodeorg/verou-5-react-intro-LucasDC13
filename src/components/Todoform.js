@@ -1,14 +1,38 @@
-import React from "react";
+import React, { useRef } from "react";
 
-const Todoform = () => {
+const TodoForm = () => {
+    const inputRef = useRef();
+    ;
+
+    function submitForm() {
+        const inputElement = inputRef.current;
+        console.log( inputElement.value );
+    }
+
+    function handleKeyUp(e) {
+        if (e.key === 'Enter') {
+            submitForm();
+        }
+    }
+
     return ( 
-    <>
-        <div className="Todo-form">
-            <input type="text" class="Todo-input"></input>
-            <input type="submit" value="Submit" class="Todo-input"></input>
-        </div>
-    </>
+        <section className="TodoForm">  
+        {/* Maybe no form ele */}
+            <input 
+                type="text" 
+                className="TodoInput" 
+                placeholder="Add new todos here"
+                ref={ inputRef }
+                onKeyUp={ handleKeyUp }>
+            </input>
+            <input 
+                type="submit" 
+                value="Submit" 
+                className="TodoInput"
+                onClick={ submitForm }>
+            </input>
+        </section>
     );
  };
 
- export default Todoform;
+ export default TodoForm;
